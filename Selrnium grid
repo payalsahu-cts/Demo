@@ -1,0 +1,89 @@
+Selenium Grid
+57:59
+multiple test scripts on multiple machines at the same time with webdriver you can only do sequential execution but
+58:06
+in real time environment you always have the need to run test cases in distributed environment and that is
+58:11
+where selenium grid comes into picture so grid was conceptualized and developed by patrick the main objective is to
+58:18
+minimize test execution type and how by running your test parallely so design is
+58:24
+in such a way that commands are distributed on multiple machines where you want to run test and all these are
+58:30
+executed simultaneously what do you achieve by this methodology of course the parallel execution on different
+58:35
+browsers and operating system grid is pretty flexible and can integrate with many tools like say you want a reporting
+58:42
+tool integrated to pull all the reports from the multiple machines where you're running your test cases and you want to
+58:48
+present that report in a good looking format so you have an option to integrate such report okay so how does
+58:54
+this grid work so grid has a hub and node concept which helps in achieving the parallel execution let's take an
+59:01
+example say your application supports all browsers and most of the operating
+59:06
+systems like as in this picture you could say one of them is a windows machine one of them is a mac machine and
+59:12
+another one is say a linux machine so your requirement is to run the test on all supported browsers and operating
+59:18
+system like the one which is depicted in this picture so what you have to do is first thing is you configure a master
+59:25
+machine or what you also call it as a hub by running something called a selenium standalone server and this
+59:32
+talent standalone server can be downloaded from the selenium hq website using the server you create a hub
+59:39
+configuration that is this node and then you create nodes specific to your
+59:45
+machine requirement and how are these nodes created you again use the same server which is your standalone selenium
+59:52
+server to create the node configuration so i'll show you where the selenium server can be downloaded so if we go
+59:58
+back to our selenium hq website so you can see here right on the top it says selenium
+1:00:04
+standalone server and this is the latest version available so you just need to download once you download this keep a
+1:00:11
+version of this one on your master machine that is your hub and this should also be present on your node machines
+1:00:17
+and there is a certain command which you can use to install the server as a node and as a master depending on your
+1:00:24
+configuration so once that is done you have your master and your master of the
+1:00:30
+hub and the notes created your master can control on which nodes you want to
+1:00:36
+execute test now say if this is a mac machine this is a windows machine through your master or your hub you
+1:00:42
+control on which machine you want to execute what tests then also you could have a multiple combination of tests
+1:00:49
+like say for example smoke test to be run on all these nodes that's the kind of configuration you can create or a
+1:00:55
+certain component test to be run on say only windows 10 with an edge browser or say regression test on mac machine so
+1:01:03
+any such things whatever configurations you have for your node what happens is
+1:01:08
+the hub picks the right node which confirms to your requirements or the configurations which are set up and then
+1:01:14
+sends a command to the node to execute those test cases on the node everything is controlled through your master
+1:01:21
+machine only here what happens on the node so once the node gets the command from the master the node actually runs
+1:01:28
+all the test cases which is it which it intends to run on the specific browser which you have mentioned in your
+1:01:34
+configuration file so this is a very high level architecture and how a grid works so if you want to know more
+1:01:40
+details of how the grid works you can refer to our video on simply learn all right again limitations so what
+1:01:47
+limitation does this grid have now the first one is it has relatively poor scalability compared to many modern
+1:01:53
+applications it is pretty static each server is configured in advance with a
+1:01:58
+subset of required browser instances available so if you want to vary this you will need to reconfigure so any
+1:02:04
+configuration tomorrow on any machines you want to change it cannot be done automatically you need to completely
+1:02:09
+reconfigure that node and then add it back to the grid thirdly although it is available to run on virtual servers it
+1:02:16
+is actually not designed as a cloud native application and because of as a result of this it isn't optimized to
+1:02:23
+take advantage of things like say distributed storage or dynamic scaling or even automatic failover so these are
+1:02:30
+some of the limitations of the grid advantages of selenium speed and accuracy of course since there is no
